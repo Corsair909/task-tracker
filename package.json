@@ -1,0 +1,31 @@
+{
+  "name": "task-tracker",
+  "version": "0.0.1",
+  "description": "starting prototype for task tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "cors": "*",
+    "jsonwebtoken": "*",
+    "body-parser": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "Alexander Shavel",
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Corsair909/task-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Corsair909/task-tracker/issues"
+  },
+  "homepage": "https://github.com/Corsair909/task-tracker#readme"
+}
