@@ -1,0 +1,41 @@
+<div class="login-wrapper">
+  <form class="login" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit(registerForm.value)">
+      <label class="title">
+          Registration
+          <h5 class="hint">Please, input information about yourself</h5>
+      </label>
+      <div class="login-group">
+          <input formControlName="firstname" class="firstname" type="text" id="login_username" placeholder="First Name">
+          
+          <!-- First Name Errors -->
+          <div *ngIf="firstname.touched && firstname.invalid" class="error active">
+            <div *ngIf="firstname.errors.required">First Name is required</div>
+          </div>
+
+          <input formControlName="lastname" class="lastname" type="text" id="login_username" placeholder="Last Name">
+          
+          <!-- Last Name Errors -->
+
+          <div *ngIf="lastname.touched && firstname.invalid" class="error active">
+            <div *ngIf="lastname.errors.required">First Name is required</div>
+          </div>
+          
+          <input formControlName="email" class="email" type="text" id="login_username" placeholder="E-mail">
+          
+          <!-- E-mail Errors -->
+          <div *ngIf="email.touched && email.invalid" class="error active">
+            <div *ngIf="email.errors.required">E-mail is required</div>
+          </div>
+
+          <input formControlName="password" class="password" type="password" id="login_password" placeholder="Password">
+          
+          <!-- Password Errors -->
+          <div *ngIf="password.touched && password.invalid" class="error active">
+            <div *ngIf="password.errors.required">Password is required</div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">SIGN UP</button>
+
+      </div>
+  </form>
+</div>

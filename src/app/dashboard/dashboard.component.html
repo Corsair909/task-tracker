@@ -1,0 +1,12 @@
+<div *ngIf="user">
+  <h2 class="page-header">{{user.firstname}} {{user.lastname}}</h2>
+  <ul class="list-group">
+    <li class="list-group-item">Surname: {{user.lastname}}</li>
+    <li class="list-group-item">E-mail: {{user.email}}</li>
+  </ul>
+</div>
+
+<p>
+  dashboard works!
+</p>
+<a (click)="onLogoutClick()">Logout</a>
