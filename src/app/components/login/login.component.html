@@ -1,0 +1,37 @@
+<div class="login-wrapper">
+  <form class="login" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit(loginForm.value)">
+    <label class="title">
+      <h3 class="welcome">Welcome to</h3>
+        TASK TRACKER
+        <h5 class="hint">Use your E-Mail to sign in or create one now</h5>
+    </label>
+    <div class="login-group">
+      <input formControlName="email" class="email" type="text" id="login_email" placeholder="E-Mail">
+        <input formControlName="password" class="password" type="password" id="login_password" placeholder="Password">
+          <div class="checkbox">
+            <input type="checkbox" id="rememberme">
+            <label for="rememberme">
+              Remember me
+            </label>
+          </div>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger error active">
+            <ul>
+            <li *ngIf="email.errors.required">
+                E-mail is required
+            </li>
+            <li *ngIf="email.errors.email">
+              E-mail has invalid value
+            </li>
+            </ul>
+          </div>
+        
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger error active">
+              <div *ngIf="password.errors.required">
+                Password is required
+              </div>
+            </div>
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">NEXT</button>
+      <a routerLink="/register" class="signup">Sign up for a Company ID</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Title: {{project.projectName}}</h1>
+  
+  <br>
+
+  <div class="description">
+  <h3>Description</h3>
+
+    <br>
+
+    <p>{{project.description}}</p>
+  </div>
+  <br>
+  <div class="tasks">
+      <h3>Tasks</h3>
+      <br>
+      <ul>
+        <li *ngFor='let topic of project.topics'>{{topic}}</li>
+      </ul>
+  </div>
+  
+</div>

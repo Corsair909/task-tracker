@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+      <a class="adding" [routerLink]="['/create']">
+        Add Project
+      </a>
+  </div>
+
+  <div class="task-list row">
+    <a *ngFor="let project of projects" [routerLink]="['project', project._id]">
+      <div class="project">
+        Project "{{project.projectName}}"
+
+        <br>
+        <h6>Description</h6>
+        <p>{{project.description}}</p>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center; 
+}
+
+.row {
+    align-self: center;
+    text-align: center;
+}
+
+a {
+    border: 1px solid #db2e2e;
+    background-color: white;
+    border-radius: 20px;
+    color: #db2e2e;
+    margin: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+a:hover {
+    background-color: #db2e2e;
+    color: white;
+}
+
+a.adding {
+    font-size: 2.5em;
+    padding: 15px;
+}
+
+h6 {
+    color: #db2e2e;
+}
+
+p {
+    color: #db2e2e;
+}
+
+.task-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.project {
+    margin: 15px;
+    font-size: 2em;
+    text-align: center;
+    vertical-align: middle;
+    height: 200px;
+    width: 300px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%)
+}

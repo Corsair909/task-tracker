@@ -1,0 +1,69 @@
+<div class="login-wrapper">
+  <form class="login" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit(registerForm.value)">
+      <label class="title">
+          Registration
+          <h5 class="hint">Please, input information about yourself</h5>
+      </label>
+      <div class="login-group">
+
+          <div class="form-group">
+              <label for="aForm_3">Choose your specialty</label>
+              <div class="select">
+                  <select formControlName="job" id="aForm_3">
+                      <option>Developer</option>
+                      <option>Manager</option>
+                  </select>
+              </div>
+          </div>
+
+          <input formControlName="firstname" class="firstname" type="text" id="login_username" placeholder="First Name">
+          
+          <input formControlName="lastname" class="lastname" type="text" id="login_username" placeholder="Last Name">
+          
+          <input formControlName="email" class="email" type="text" id="login_username" placeholder="E-mail">
+          
+          <input formControlName="password" class="password" type="password" id="login_password" placeholder="Password">
+
+          <input formControlName="confirmPassword" class="password" type="password" id="login_confirmPassword" placeholder="Confirm password">
+          
+          <!-- Errors Alert -->
+          <div *ngIf="(firstname.dirty || firstname.touched) &&firstname.invalid" class="alert alert-danger error active">
+            <ul>
+              <li *ngIf="firstname.errors.required">First Name is required</li>
+              <li *ngIf="firstname.errors.pattern">First name must contain only letters</li>
+            </ul>
+          </div>
+
+          <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger error active">
+            <ul>
+              <li *ngIf="lastname.errors.required">Last name is required</li>
+              <li *ngIf="lastname.errors.pattern">Last name must contain only letters</li>
+            </ul>
+          </div>
+
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger error active">
+            <ul>
+              <li *ngIf="email.errors.required">E-mail is required</li>
+              <li *ngIf="email.errors.minLength">E-mail must contain more than 8 symbols</li>
+              <li *ngIf="email.errors.email">E-mail has invalid value</li>
+            </ul>
+          </div>
+
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger error active">
+            <ul>
+              <li *ngIf="password.errors.required">Password is required</li>
+              <li *ngIf="password.errors.minLength">Password must contain more than 4 symbols</li>
+            </ul>
+          </div>
+
+          <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="alert alert-danger error active">
+            <ul>
+              <li *ngIf="confirmPassword.errors.PasswordValidation.MatchPassword">Password not match</li>
+            </ul>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">SIGN UP</button>
+
+      </div>
+  </form>
+</div>
